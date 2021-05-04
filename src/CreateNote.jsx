@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './index.css'
 const CreateNote=(props)=>{
   const [note,setNote]=useState({
     title:"",
@@ -25,15 +26,16 @@ const chgExp=()=>{
 }
     return (
       <>
-        <div>
+        <div className='createnote'>
        {exp?
-        <input name='title' type='text' placeholder='Title' autoComplete='off' value={note.title} onChange={noteMake}></input>:null}
+        <input name='title' type='text' placeholder='Title' autoComplete='off' value={note.title} onChange={noteMake} className="inputCss"></input>:null}
         <br/>
-
-       <textarea name='content' rows='' cols='' placeholder='write a note..' value={note.content} onChange={noteMake} onClick={chgExp}></textarea>
+       <div className="textDiv">
+       <textarea name='content' rows='' cols='' placeholder='write a note..' value={note.content} onChange={noteMake} onClick={chgExp} className="textArea"></textarea>
        {exp?
-       <button onClick={sendNote}>+</button>
+       <button onClick={sendNote} className='noteButton'>+</button>
        :null}
+       </div>
        </div>  
       </>  
     )

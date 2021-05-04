@@ -7,11 +7,11 @@ const Note=(props)=>{
     return (
        <>
        <div className='note'>
-           <h1>{props.title}</h1>
-           <br/>
-           <p>{props.content}</p>
-           <br/>
-           <button onClick={deleteItem}><DeleteOutlineIcon/></button>
+           <h1 className='titleHeading'>{props.title}</h1>
+         
+           <h2 className='contentHeading'>{props.content}</h2>
+           
+           <button onClick={deleteItem} className='delItem'><DeleteOutlineIcon /></button>
        </div>    
        </> 
     )
